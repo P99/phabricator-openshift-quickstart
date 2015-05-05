@@ -27,6 +27,9 @@ return array(
     getenv('OPENSHIFT_GEAR_DIR').'/repo/pygments/bin',
   ),
 
+  // Needed to import external git repositories
+  'repository.default-local-path' => getenv('OPENSHIFT_DATA_DIR')
+
   // NOTE: Check default.conf.php for detailed explanations of all the
   // configuration options, including these.
 
