@@ -26,9 +26,11 @@ return array(
 
   'pygments.enabled' => true,
 
-  // Needed for non-standard location of Pygments.
   'environment.append-paths' => array(
+    // Needed for non-standard location of Pygments.
     getenv('OPENSHIFT_REPO_DIR').'/repo/pygments/bin',
+    // For Graphviz cartridge
+    getenv('OPENSHIFT_HOMEDIR') . 'graphviz/usr/bin/'
   ),
 
   // Needed to import external git repositories

@@ -32,6 +32,17 @@ MySQL 5.1 database added.  Please make note of these credentials:
 ...
 ```
 
+## Add graphviz cartridge (optional)
+
+```shell
+rhc  add-cartridge http://cartreflect-claytondev.rhcloud.com/github/puzzle/openshift-graphviz-cartridge --app phabricator
+
+RESULT:
+
+Adding http://cartreflect-claytondev.rhcloud.com/github/puzzle/openshift-graphviz-cartridge to application 'phabricator' ... Password: ******
+done
+```
+
 ## Create a Mailgun account
 Then you can add your Mailgun keys inside myconfig.conf.php (next step)
 To enable inboud emails you can add a default route in Mailgun config 
@@ -116,14 +127,23 @@ are persistent through deployments.
 
 ## Pygments
 
-I've managed to get Pygments working decently with Phabricator, now that upstream
+Pygments are working decently with Phabricator, now that upstream
 [D3091](https://secure.phabricator.com/D3091) has landed. Behind the scenes,
 the Quickstart will set up a python 'virtualenv' in your repository space when you
 deploy. This means 1) we are able to install Pygments into this environment, and use
 it; and 2) Every time you deploy (since your live repository space gets deleted and
 re-created), you get the latest Pygments automatically. Have fun!
 
+## Graphviz
+
+This tool is used as a custom interpreter in order to draw great graphs inside Phriction wiki
+This is nice for documenting a piece of code, draw data base schemas, class diagrams  etc
+Unfortunately, the default support for 'dot' remarkup has been removed from upstream because 
+it has proven to be a security threat. So... at your own risk ;-)
+
+
 # Thanks
 
-Thank you to Evan Priestley for working with me in getting this working on OpenShift
-and for the awesome job he's done (and continues to do) with developing Phabricator.
+Thanks Evan Priestley and the team for developing this awesome tool (Phabricator)
+Thanks Ricky Elrod for getting this working on OpenShift
+
