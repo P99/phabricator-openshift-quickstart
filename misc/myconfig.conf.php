@@ -24,7 +24,7 @@ return array(
 
   // Needed for non-standard location of Pygments.
   'environment.append-paths' => array(
-    getenv('OPENSHIFT_GEAR_DIR').'/repo/pygments/bin',
+    getenv('OPENSHIFT_REPO_DIR').'/repo/pygments/bin',
   ),
 
   // Needed to import external git repositories
