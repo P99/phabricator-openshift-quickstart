@@ -32,6 +32,12 @@ MySQL 5.1 database added.  Please make note of these credentials:
 ...
 ```
 
+## Create a Mailgun account
+Then you can add your Mailgun keys inside myconfig.conf.php (next step)
+To enable inboud emails you can add a default route in Mailgun config 
+  route: catch_all()
+  action: forward("https://phabricator.example.com/mail/mailgun/")
+
 ## Pull in this Quickstart repository.
 
 ```shell

@@ -9,16 +9,20 @@ return array(
 
   // This will be the base domain for your install, and must be configured.
   // Use "https://" if you have SSL. See below for some notes.
-  'phabricator.base-uri' => 'https://phabricator2-codeblock.rhcloud.com/',
+  'phabricator.base-uri' => 'https://phabricator-mydomain.rhcloud.com/',
 
   // Connection information for MySQL.
   'mysql.host' => getenv('OPENSHIFT_MYSQL_DB_HOST'),
   'mysql.user' => getenv('OPENSHIFT_MYSQL_DB_USERNAME'),
   'mysql.pass' => getenv('OPENSHIFT_MYSQL_DB_PASSWORD'),
 
-  // Basic email domain configuration.
-  'metamta.default-address' => 'admin@phabricator2-codeblock.rhcloud.com',
-  'metamta.domain'          => 'phabricator2-codeblock.rhcloud.com',
+  // Email configuration with Mailgun
+  'metamta.default-address' => 'admin@phabricator-mydomain.rhcloud.com',
+  'metamta.reply-handler-domain' => 'phabricator-mydomain.rhcloud.com',
+  'metamta.domain'          => 'phabricator-mydomain.rhcloud.com',
+  'metamta.mail-adapter' => 'PhabricatorMailImplementationMailgunAdapter',
+  'mailgun.domain' => 'sandboxXXXXXXXXXXXXXXXX.mailgun.org',
+  'mailgun.api-key' => 'key-XXXXXXXXXXXXXXXXXXX'
 
   'pygments.enabled' => true,
 
